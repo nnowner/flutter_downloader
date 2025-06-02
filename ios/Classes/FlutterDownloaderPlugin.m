@@ -380,18 +380,19 @@ static NSMutableDictionary<NSString*, NSMutableDictionary*> *_runningTaskById = 
     NSMutableString *sanitizedFilename = [NSMutableString string];
     
     // Iterate over each character in the original filename
-    for (NSUInteger i = 0; i < filename.length; i++) {
-        unichar character = [filename characterAtIndex:i];
-        
-        // Check if the character is in the allowed set
-        if ([allowedCharacters characterIsMember:character]) {
-            // Append the allowed character to the sanitized filename
-            [sanitizedFilename appendFormat:@"%C", character];
-        } else {
-            // Replace forbidden characters with an underscore
-            [sanitizedFilename appendString:@"_"];
-        }
-    }
+//    for (NSUInteger i = 0; i < filename.length; i++) {
+//        unichar character = [filename characterAtIndex:i];
+//        
+//        // Check if the character is in the allowed set
+//        if ([allowedCharacters characterIsMember:character]) {
+//            // Append the allowed character to the sanitized filename
+//            [sanitizedFilename appendFormat:@"%C", character];
+//        } else {
+//            // Replace forbidden characters with an underscore
+//            [sanitizedFilename appendString:@"_"];
+//        }
+//    }
+    sanitizedFilename = filename;
     
     // Ensure the sanitized filename is not empty
     if ([sanitizedFilename isEqualToString:@""]) {
